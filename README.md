@@ -16,3 +16,11 @@
 | OpenWRT | 25.12.5 (Factory SQUASHFS) |
 | miniupnpd-nftables | 2.3.9 |
 
+## Reproduction
+
+uci set upnpd.config.external_iface='wan'
+uci set upnpd.config.internal_iface='br-lan'
+uci set upnpd.config.enabled='1'
+uci set upnpd.config.secure_mode='1'
+uci set upnpd.config.log_output='1'
+uci commit upnpd
