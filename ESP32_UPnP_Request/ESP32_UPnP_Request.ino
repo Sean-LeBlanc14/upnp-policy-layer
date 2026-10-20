@@ -2,7 +2,7 @@
 #include "TinyUPnP.h"
 #include <EasyDDNS.h>
 
-#define LISTEN_PORT 5000
+#define LISTEN_PORT 8080
 #define LEASE_DURATION 36000
 #define MAPPING_NAME "ESP32 UPnP Request"
 
