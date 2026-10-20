@@ -28,5 +28,6 @@ uci set upnpd.config.internal_iface='lan'
 uci set upnpd.config.enabled='1'
 uci set upnpd.config.secure_mode='1'
 uci set upnpd.config.log_output='1'
+uci set upnpd.config.external_ip='1.2.3.4'
 uci commit upnpd
 ```
