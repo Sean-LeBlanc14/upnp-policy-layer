@@ -6,15 +6,25 @@
 #define LEASE_DURATION 36000
 #define MAPPING_NAME "ESP32 UPnP Request"
 
+WiFiServer server(LISTEN_PORT);
+
 void setup() {
   Serial.begin(115200);
 
   ConnectToWifi();
 
   SendUPnPRequest();
+  server.begin();
 }
 
 void loop() {
+  WiFiClient client = server.accept();
+  if (client) {
+    client.print("HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nConnection: close\r\n\r\n");
+    client.println("Reached ESP32 through UPnP mapping");
+    delay(10);
+    client.stop();
+  }
 }
 
 void ConnectToWifi() {
