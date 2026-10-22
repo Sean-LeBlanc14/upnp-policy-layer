@@ -3,7 +3,7 @@
 #include <EasyDDNS.h>
 
 #define LISTEN_PORT 8080
-#define LEASE_DURATION 36000
+#define LEASE_DURATION 0 // Lease duration of 0 is infinite
 #define MAPPING_NAME "ESP32 UPnP Request"
 
 WiFiServer server(LISTEN_PORT);
